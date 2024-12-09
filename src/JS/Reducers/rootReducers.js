@@ -12,7 +12,7 @@ const initialState = {
     ]
 }
 
-const rootReduccer = (state = initialState, action) => {
+const rootReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_ARTICLE:
             return {
@@ -23,4 +23,4 @@ const rootReduccer = (state = initialState, action) => {
     }
 }
 
-export default rootReduccer;
+export default rootReducer;

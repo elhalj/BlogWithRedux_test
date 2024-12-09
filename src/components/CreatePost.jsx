@@ -1,14 +1,29 @@
 import React from "react";
 import { useState } from "react"
+import { connect } from 'react-redux' ;
+import { addPost } from '../JS/Actions/actions' ;
 
+const mapDispatchToProps = dispatch =>  {
 
+    return {
+ 
+         addArticle : post =>  dispatch(addPost(post))
+ 
+     }
+ 
+ }
 
-const CreatePost = () => {
+const CreatePost = (props) => {
     /* eslint-disable */
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const handleSubmit = (e) => {
         e.preventDefault()
+        props.addArticle({
+            id : Date.now(),
+            title,
+            content
+        })
     }
 
     return (
